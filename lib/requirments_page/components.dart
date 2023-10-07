@@ -43,6 +43,7 @@ class GridItem extends StatelessWidget {
             Icon(
               icon,
               size: 50,
+              color: Color.fromRGBO(1, 64, 224, 0.6),
             ),
           ],
         ),
