@@ -21,7 +21,10 @@ class _ReqirmentsPageState extends State<ReqirmentsPage> {
             const Center(
               child: Text(
                 "StudiLife",
-                style: TextStyle(fontWeight: FontWeight.w600, fontSize: 50),
+                style: TextStyle(
+                    fontWeight: FontWeight.w400,
+                    fontSize: 50,
+                    fontStyle: FontStyle.italic),
               ),
             ),
             Column(
