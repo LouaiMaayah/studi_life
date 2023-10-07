@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:line_icons/line_icon.dart';
+import 'package:line_icons/line_icons.dart';
 import 'package:omnilife/requirments_page/components.dart';
 
 class ReqirmentsPage extends StatefulWidget {
@@ -14,52 +16,79 @@ class _ReqirmentsPageState extends State<ReqirmentsPage> {
     return Scaffold(
       body: SafeArea(
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            Center(
+            const Center(
               child: Text(
-                "data",
+                "StudiLife",
                 style: TextStyle(fontWeight: FontWeight.w600, fontSize: 50),
               ),
             ),
-            Flexible(
-              child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 30),
-                child: GridView.count(
-                  mainAxisSpacing: 8,
-                  crossAxisSpacing: 8,
-                  crossAxisCount: 2,
-                  children: [
-                    GridItem(
-                      icon: Icon(Icons.abc),
-                      text: "boobs",
-                    ),
-                    GridItem(
-                      icon: Icon(Icons.abc),
-                      text: "no boobs",
-                    ),
-                    GridItem(
-                      icon: Icon(Icons.abc),
-                      text: "boobs",
-                    ),
-                    GridItem(
-                      icon: Icon(Icons.abc),
-                      text: "boobs",
-                    ),
-                    GridItem(
-                      icon: Icon(Icons.abc),
-                      text: "boobs",
-                    ),
-                    GridItem(
-                      icon: Icon(Icons.abc),
-                      text: "boobs",
-                    ),
-                  ],
+            Column(
+              children: [
+                Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+                  GridItem(
+                    icon: LineIcons.euroSign,
+                    text: "Finances",
+                    onTapFunction: () => Moveto("text"),
+                  ),
+                  const SizedBox(
+                    width: 15,
+                  ),
+                  GridItem(
+                    icon: LineIcons.check,
+                    text: "To Do's",
+                    onTapFunction: () => Moveto("text"),
+                  )
+                ]),
+                const SizedBox(
+                  height: 15,
                 ),
-              ),
+                Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+                  GridItem(
+                    icon: LineIcons.book,
+                    text: "Courses",
+                    onTapFunction: () => Moveto("text"),
+                  ),
+                  const SizedBox(
+                    width: 15,
+                  ),
+                  GridItem(
+                    icon: LineIcons.shoppingBag,
+                    text: "Shopping",
+                    onTapFunction: () => Moveto("text"),
+                  )
+                ]),
+                const SizedBox(
+                  height: 15,
+                ),
+                Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+                  GridItem(
+                    icon: LineIcons.calendar,
+                    text: "Reminders",
+                    onTapFunction: () => Moveto("text"),
+                  ),
+                  const SizedBox(
+                    width: 15,
+                  ),
+                  GridItem(
+                    icon: LineIcons.plane,
+                    text: "Bucket List",
+                    onTapFunction: () => Moveto("text"),
+                  )
+                ]),
+              ],
             ),
+            const SizedBox(
+              height: 15,
+            )
           ],
         ),
       ),
     );
+  }
+
+  void Moveto(String text) {
+    Navigator.pushNamed(context, text);
   }
 }
